@@ -1,22 +1,22 @@
 package com.example.dining_review_API.model;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.*;
 
-import java.util.Dictionary;
-import java.util.Optional;
-
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@RequiredArgsConstructor(access = AccessLevel.PUBLIC)
 public class DiningReview {
+    @Id
+    @GeneratedValue
     private long id;
 
     private String reviewerName;
     private Long restaurantId;
-    private Optional<String> comment;
+    private String comment;
 
     private Integer peanutScore;
     private Integer dairyScore;

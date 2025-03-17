@@ -1,16 +1,18 @@
 package com.example.dining_review_API.model;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
 
-import java.util.Dictionary;
-
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor(access= AccessLevel.PUBLIC)
-public class Restuarant {
+@RequiredArgsConstructor(access= AccessLevel.PUBLIC)
+public class Restaurant {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name;
